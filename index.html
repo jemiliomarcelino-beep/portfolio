@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portefólio profissional de Jacinta Emilio Marcelino.">
+  <title>Jacinta Emilio Marcelino | Portefólio</title>
+  <style>
+    :root {
+      --azul: #155eef;
+      --azul-escuro: #102a56;
+      --azul-claro: #eaf2ff;
+      --branco: #ffffff;
+      --texto: #24324a;
+      --cinza: #667085;
+      --borda: #dce6f5;
+      --fundo: #f7faff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Arial, Helvetica, sans-serif; color: var(--texto); background: var(--fundo); line-height: 1.65; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1100px, 92%); margin: auto; }
+    header { background: rgba(255,255,255,.96); border-bottom: 1px solid var(--borda); position: sticky; top: 0; z-index: 10; }
+    nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { font-weight: 800; color: var(--azul-escuro); font-size: 1.12rem; }
+    .brand span { color: var(--azul); }
+    .nav-links { display: flex; align-items: center; gap: 22px; font-size: .94rem; }
+    .nav-links a:hover { color: var(--azul); }
+    .menu-btn { display: none; border: 1px solid var(--borda); border-radius: 9px; background: white; padding: 8px 12px; color: var(--azul-escuro); font-size: 1.1rem; }
+    .hero { padding: 76px 0 64px; background: linear-gradient(125deg, #edf4ff 0%, #fff 65%); }
+    .hero-grid { display: grid; grid-template-columns: 1.35fr .8fr; gap: 55px; align-items: center; }
+    .eyebrow { display: inline-block; color: var(--azul); background: #e1ecff; padding: 6px 13px; border-radius: 999px; font-size: .84rem; font-weight: 700; margin-bottom: 17px; }
+    h1 { color: var(--azul-escuro); font-size: clamp(2.25rem, 5vw, 3.8rem); line-height: 1.12; letter-spacing: -1.5px; margin-bottom: 18px; }
+    h1 span { color: var(--azul); }
+    .intro { font-size: 1.08rem; color: #4d5d76; max-width: 620px; margin-bottom: 25px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 19px; border-radius: 10px; font-weight: 700; border: 1px solid var(--azul); transition: .2s; }
+    .btn-primary { background: var(--azul); color: white; }
+    .btn-primary:hover { background: #0d49c7; }
+    .btn-secondary { color: var(--azul); background: white; }
+    .btn-secondary:hover { background: var(--azul-claro); }
+    .photo-wrap { justify-self: center; position: relative; width: min(310px, 100%); }
+    .photo-wrap:before { content: ""; position: absolute; inset: 16px -14px -14px 14px; background: var(--azul); border-radius: 26px; opacity: .14; }
+    .photo-wrap img { position: relative; display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 24%; border: 7px solid white; border-radius: 26px; box-shadow: 0 18px 45px rgba(21,94,239,.15); }
+    section { padding: 70px 0; }
+    .section-heading { margin-bottom: 30px; }
+    .section-heading p { color: var(--azul); text-transform: uppercase; letter-spacing: 1.6px; font-size: .78rem; font-weight: 800; }
+    h2 { color: var(--azul-escuro); font-size: clamp(1.7rem, 3vw, 2.35rem); margin-top: 5px; }
+    .about-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 28px; }
+    .panel { background: white; border: 1px solid var(--borda); border-radius: 18px; padding: 27px; box-shadow: 0 8px 25px rgba(16,42,86,.035); }
+    .panel p + p { margin-top: 13px; }
+    .highlight { background: var(--azul-escuro); color: white; }
+    .highlight h3 { font-size: 1.25rem; margin-bottom: 10px; }
+    .highlight p { color: #e1eaff; }
+    .facts { display: grid; gap: 14px; }
+    .fact { display: flex; gap: 12px; align-items: flex-start; }
+    .fact-icon { background: var(--azul-claro); color: var(--azul); border-radius: 10px; padding: 8px 10px; font-weight: 800; }
+    .fact strong { display: block; color: var(--azul-escuro); }
+    .muted { color: var(--cinza); font-size: .94rem; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .info-card { background: white; border: 1px solid var(--borda); border-radius: 16px; padding: 24px; }
+    .info-card .symbol { font-size: 1.6rem; margin-bottom: 10px; }
+    .info-card h3 { color: var(--azul-escuro); margin-bottom: 7px; }
+    .skill-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill { background: white; color: var(--azul-escuro); border: 1px solid #cbdcf8; border-radius: 999px; padding: 8px 14px; font-size: .92rem; }
+    .opportunities { background: #edf4ff; }
+    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 28px; }
+    .contact-list { display: grid; gap: 15px; margin-top: 18px; }
+    .contact-item { padding: 13px 14px; border: 1px solid var(--borda); border-radius: 11px; background: #fff; }
+    .contact-item small { display: block; color: var(--cinza); }
+    .contact-item a { color: var(--azul); overflow-wrap: anywhere; }
+    form { display: grid; gap: 14px; }
+    label { font-size: .9rem; font-weight: 700; color: var(--azul-escuro); }
+    input, textarea { width: 100%; margin-top: 5px; padding: 12px 13px; border: 1px solid #cbd5e1; border-radius: 9px; font: inherit; background: white; color: var(--texto); }
+    textarea { min-height: 110px; resize: vertical; }
+    input:focus, textarea:focus { outline: 2px solid #b7d0ff; border-color: var(--azul); }
+    .form-note { font-size: .83rem; color: var(--cinza); }
+    footer { background: var(--azul-escuro); color: #e7efff; padding: 25px 0; text-align: center; font-size: .9rem; }
+    footer span { color: white; font-weight: 700; }
+    @media (max-width: 760px) {
+      .menu-btn { display: block; }
+      .nav-links { display: none; position: absolute; left: 4%; right: 4%; top: 66px; background: white; border: 1px solid var(--borda); border-radius: 13px; padding: 16px; box-shadow: 0 12px 25px #102a5615; flex-direction: column; align-items: flex-start; }
+      .nav-links.open { display: flex; }
+      .hero { padding: 48px 0; }
+      .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .hero-grid { gap: 36px; }
+      .photo-wrap { width: min(260px, 78%); grid-row: 1; }
+      .cards { grid-template-columns: 1fr; }
+      section { padding: 52px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container" aria-label="Navegação principal">
+      <a class="brand" href="#inicio">Jacinta<span>.</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#sobre">Sobre mim</a><a href="#formacao">Formação</a><a href="#competencias">Competências</a><a href="#objetivos">Objetivos</a><a href="#contactos">Contactos</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Portefólio profissional</span>
+          <h1>Olá, sou <span>Jacinta Emilio Marcelino</span></h1>
+          <p class="intro">Jovem recém-formada no ensino secundário, com formação introdutória em programação, curiosidade, dedicação e vontade de aprender. Estou aberta a oportunidades que me permitam crescer, desenvolver competências e contribuir de forma positiva.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#contactos">Entrar em contacto</a>
+            <a class="btn btn-secondary" href="#sobre">Conhecer o meu perfil</a>
+          </div>
+        </div>
+        <div class="photo-wrap"><img src="assets/jacinta.jpg" alt="Fotografia de Jacinta Emilio Marcelino"></div>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="container">
+        <div class="section-heading"><p>Perfil</p><h2>Sobre mim</h2></div>
+        <div class="about-grid">
+          <div class="panel">
+            <p>Tenho 18 anos e concluí a 12.ª classe. Fiz um curso de curta duração em programação e tenho muito interesse em continuar a aprender, explorar novas tecnologias e adquirir experiência prática.</p>
+            <p>Sou uma pessoa motivada a desenvolver as minhas capacidades, enfrentar novos desafios e aproveitar oportunidades de formação, estágio, trabalho e colaboração. Procuro um ambiente onde possa aprender com outras pessoas e transformar conhecimentos em resultados.</p>
+          </div>
+          <div class="panel facts">
+            <div class="fact"><span class="fact-icon">01</span><div><strong>Localização</strong><span class="muted">Moçambique</span></div></div>
+            <div class="fact"><span class="fact-icon">02</span><div><strong>Escolaridade</strong><span class="muted">12.ª classe concluída</span></div></div>
+            <div class="fact"><span class="fact-icon">03</span><div><strong>Formação adicional</strong><span class="muted">Curso de curta duração em programação</span></div></div>
+            <div class="fact"><span class="fact-icon">04</span><div><strong>Motivação</strong><span class="muted">Aprendizagem contínua e crescimento profissional</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="formacao" style="background:#fff">
+      <div class="container">
+        <div class="section-heading"><p>Percurso</p><h2>Formação académica</h2></div>
+        <div class="cards">
+          <article class="info-card"><div class="symbol">🎓</div><h3>Ensino secundário</h3><p>12.ª classe concluída.</p><p class="muted">Instituição e ano de conclusão podem ser acrescentados.</p></article>
+          <article class="info-card"><div class="symbol">💻</div><h3>Programação</h3><p>Curso de curta duração em programação.</p><p class="muted">Interesse em aprofundar conhecimentos de desenvolvimento web.</p></article>
+          <article class="info-card"><div class="symbol">📚</div><h3>Aprendizagem contínua</h3><p>Disponibilidade e interesse em aprender novas ferramentas, métodos e competências.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="competencias">
+      <div class="container">
+        <div class="section-heading"><p>Conhecimentos e qualidades</p><h2>Competências e interesses</h2></div>
+        <div class="panel">
+          <div class="skill-list">
+            <span class="skill">Noções de programação</span>
+            <span class="skill">HTML</span><span class="skill">CSS</span><span class="skill">JavaScript</span>
+            <span class="skill">Vontade de aprender</span><span class="skill">Curiosidade</span>
+            <span class="skill">Dedicação</span><span class="skill">Resolução de problemas</span>
+            <span class="skill">Tecnologia e informática</span>
+          </div>
+          <p class="muted" style="margin-top:18px">As competências técnicas devem refletir o teu nível real. Edita esta lista para remover ou acrescentar conhecimentos conforme necessário.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="opportunities" id="objetivos">
+      <div class="container">
+        <div class="section-heading"><p>Próximo passo</p><h2>Oportunidades que procuro</h2></div>
+        <div class="cards">
+          <article class="info-card"><div class="symbol">🌱</div><h3>Estágios e formação</h3><p>Oportunidades para aprender, ganhar experiência e desenvolver competências profissionais.</p></article>
+          <article class="info-card"><div class="symbol">💼</div><h3>Emprego e colaboração</h3><p>Funções de nível inicial e projetos onde possa contribuir com responsabilidade e vontade de evoluir.</p></article>
+          <article class="info-card"><div class="symbol">🌍</div><h3>Bolsas de estudo</h3><p>Oportunidades de continuidade dos estudos e desenvolvimento académico, em Moçambique ou no estrangeiro.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contactos">
+      <div class="container">
+        <div class="section-heading"><p>Vamos conversar</p><h2>Contactos</h2></div>
+        <div class="contact-grid">
+          <div class="panel">
+            <p>Estou disponível para conhecer oportunidades de formação, bolsas, estágios, emprego e colaboração. Podes atualizar os campos abaixo com os teus contactos reais.</p>
+            <div class="contact-list">
+              <div class="contact-item"><small>E-mail</small><a href="mailto:teuemail@exemplo.com">Adicionar o teu e-mail</a></div>
+              <div class="contact-item"><small>Telefone / WhatsApp</small><span>Adicionar o teu número</span></div>
+              <div class="contact-item"><small>GitHub</small><a href="https://github.com/" target="_blank" rel="noopener noreferrer">Adicionar o link do teu perfil GitHub</a></div>
+              <div class="contact-item"><small>Localização</small><span>Moçambique</span></div>
+            </div>
+          </div>
+          <div class="panel">
+            <h3 style="color:var(--azul-escuro);margin-bottom:14px">Mensagem de contacto</h3>
+            <form id="contactForm">
+              <label for="nome">O teu nome<input id="nome" name="nome" placeholder="Nome de quem contacta" required></label>
+              <label for="email">E-mail<input id="email" name="email" type="email" placeholder="nome@exemplo.com" required></label>
+              <label for="mensagem">Mensagem<textarea id="mensagem" name="mensagem" placeholder="Escreve a tua mensagem..." required></textarea></label>
+              <button class="btn btn-primary" type="submit">Preparar mensagem</button>
+              <p class="form-note">Este formulário abre a aplicação de e-mail do visitante. Para receber mensagens diretamente no site, será necessário configurar um serviço de formulário ou backend.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="container">© <span id="year"></span> Jacinta Emilio Marcelino · Portefólio profissional</div></footer>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('contactForm').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const nome = document.getElementById('nome').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const mensagem = document.getElementById('mensagem').value.trim();
+      const destino = 'teuemail@exemplo.com'; // Substitui pelo teu e-mail real.
+      const assunto = encodeURIComponent('Contacto através do portefólio');
+      const corpo = encodeURIComponent(`Nome: ${nome}\nE-mail: ${email}\n\nMensagem:\n${mensagem}`);
+      window.location.href = `mailto:${destino}?subject=${assunto}&body=${corpo}`;
+    });
+  </script>
+</body>
+</html>

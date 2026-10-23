@@ -1,0 +1,13 @@
+PORTEFÓLIO DE JACINTA EMILIO MARCELINO
+
+Como usar:
+1. Extraia a pasta ZIP.
+2. Abra index.html num navegador para visualizar o portefólio.
+3. Para publicar, envie index.html e a pasta assets para o seu repositório GitHub ou serviço de alojamento. Não altere a estrutura de pastas.
+
+Antes de publicar:
+- Substitua os campos de e-mail, telefone/WhatsApp e GitHub pelos seus contactos reais.
+- No código de index.html, procure por "teuemail@exemplo.com" e substitua pelo e-mail que pretende receber mensagens.
+- Acrescente o nome da instituição de ensino, ano de conclusão e outros cursos/projetos, se desejar.
+
+O formulário de contacto usa a aplicação de e-mail do visitante; não guarda nem envia mensagens por si só sem configuração adicional.
